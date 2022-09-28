@@ -59,6 +59,20 @@ body {
     background-color: rgb(235, 178, 35);
 }
 
+.container img{
+    position:absolute;
+    right: 15%;
+    bottom: -65px;
+    rotate: 140deg;
+}
+
+.click{
+    position: absolute;
+    right: 20px;
+    bottom: -70px;
+    rotate: -25deg;
+}
+
 footer {
     position: absolute;
     bottom: 0;
