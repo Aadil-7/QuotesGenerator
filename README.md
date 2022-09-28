@@ -1,0 +1,1 @@
+# this is a random Quote generator app made using API, which is bulit by -----> https://forum.freecodecamp.org/u/sergeywebpro/summary
