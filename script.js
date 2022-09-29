@@ -14,3 +14,4 @@ const newQuote = () => {
     });
 }
 newQuote();
+window.scrollBy(0,100)
