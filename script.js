@@ -9,8 +9,8 @@ const newQuote = () => {
       document.getElementById(`author`).innerText = author == null ? `--Anonymous` : `--${author}`
     })
     .catch(() => {
-      document.getElementById(`quote`).innerText = `Difference between who we are and who we want to be is what we do.`;
-      document.getElementById(`author`).innerHTML = `<p>Anonymous</p><br><small>Something Went Wrong Check Your Connection</small>`
+      document.getElementById(`quote`).innerText = `Oops... Error.`;
+      document.getElementById(`author`).innerHTML = `Something Went Wrong <br>Check Your Connection.`
     });
 }
 newQuote();
