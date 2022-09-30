@@ -17,6 +17,7 @@ const newQuote = () => {
 
 newQuote();
 
+<<<<<<< HEAD
 window.addEventListener("orientationchange", function () {
   oriDetection();
 });
@@ -50,3 +51,5 @@ function autoDisplay() {
   clearTimeout(timeoutId)
   secs = 5
 }
+=======
+>>>>>>> 86d3a28a073742cfa48dae3737c50b8f4979d7ac
