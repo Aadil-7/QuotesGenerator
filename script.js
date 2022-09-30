@@ -7,7 +7,7 @@ const newQuote = () => {
       let quote = quoteData.text
       let author = quoteData.author
       document.getElementById(`quote`).innerText = quote
-      document.getElementById(`author`).innerText = author == null ? `--Anonymous` : `--${author}`
+      document.getElementById(`author`).innerText = author == null ? `-- Anonymous` : `--${author}`
     })
     .catch(() => {
       document.getElementById(`quote`).innerText = `Oops... Error.`;
@@ -20,7 +20,6 @@ newQuote();
 window.addEventListener("orientationchange", function () {
   oriDetection();
 });
-
 let intervalId
 let timeoutId
 let secs = 5
@@ -50,3 +49,4 @@ function autoDisplay() {
   clearTimeout(timeoutId)
   secs = 5
 }
+oriDetection();
