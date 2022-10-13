@@ -1,7 +1,9 @@
+let mainData
 const newQuote = () => {
   fetch("https://type.fit/api/quotes")
     .then(response => response.json())
     .then((data) => {
+      mainData = data;
 
       let quoteData = data[Math.ceil(Math.random() * 1643)]
       let quote = quoteData.text
@@ -32,6 +34,7 @@ function oriDetection() {
     autoDisplay()
   }
 }
+oriDetection();
 
 function autoDisplay() {
   document.getElementsByClassName(`container`)[0].classList.remove(`displayNone`)
@@ -41,14 +44,21 @@ function autoDisplay() {
   secs = 5
 }
 
-function rotateDisplay(){
+function rotateDisplay() {
   document.getElementsByClassName(`container`)[0].classList.add(`displayNone`)
-    document.getElementsByClassName(`rotateMess`)[0].classList.add(`displayBlock`)
-    intervalId = setInterval(() => {
-      document.getElementById(`timer`).innerText = `${secs}`
-      secs -= 1
-      if (secs < 1) { secs = 5 }
-    }, 1000);
-    timeoutId = setTimeout(autoDisplay, 6000)
+  document.getElementsByClassName(`rotateMess`)[0].classList.add(`displayBlock`)
+  intervalId = setInterval(() => {
+    document.getElementById(`timer`).innerText = `${secs}`
+    secs -= 1
+    if (secs < 1) { secs = 5 }
+  }, 1000);
+  timeoutId = setTimeout(autoDisplay, 6000)
 }
-oriDetection();
+
+function updateQuote(x) {
+  let quoteData = x[Math.ceil(Math.random() * 1643)]
+  let quote = quoteData.text
+  let author = quoteData.author
+  document.getElementById(`quote`).innerText = quote
+  document.getElementById(`author`).innerText = author == null ? `-- Anonymous` : `--${author}`
+}
